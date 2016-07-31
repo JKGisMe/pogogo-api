@@ -24,11 +24,21 @@ config :logger, :console,
 
 # Make it use jsonapi
 config :phoenix, :format_encoders,
-"json-api": Poison
+  "json-api": Poison
 
 config :plug, :mimes, %{
-"application/vnd.api+json" => ["json-api"]
+  "application/vnd.api+json" => ["json-api"]
 }
+
+# Set up guardian for authentication
+config :guardian, Guardian,
+  allowed_algos: ["HS512"],
+  verify_module: Guardian.JWT,
+  issuer: "Pogogo",
+  ttl: {30, :days},
+  verify_issuer: true,
+  secret_key: System.get_env("GUARDIAN_SECRET") || "qq1sayORS6S3AO9YXIdwGiWDPTip2KDZgadgziFvug3ePNe0GGZjwL+tINE/uMFz",
+  serializer: Pogogo.GuardianSerializer
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
