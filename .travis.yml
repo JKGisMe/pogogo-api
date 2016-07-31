@@ -5,7 +5,7 @@ otp_release:
 - 19.0
 sudo: false
 addons:
-  postgresql: '9.5'
+  postgresql: '9.4'
 before_script:
 - psql -c 'create database pogogo_test;' -U postgres
 deploy:
