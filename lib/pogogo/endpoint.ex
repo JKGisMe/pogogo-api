@@ -3,7 +3,7 @@ defmodule Pogogo.Endpoint do
 
   socket "/socket", Pogogo.UserSocket
 
-  plug Corsica
+  plug Corsica, origins: "https://obscure-earth-63310.herokuapp.com"
 
   # Serve at "/" the static files from "priv/static" directory.
   #

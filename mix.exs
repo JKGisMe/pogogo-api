@@ -36,6 +36,7 @@ defmodule Pogogo.Mixfile do
      {:postgrex, ">= 0.0.0"},
      {:gettext, "~> 0.11"},
      {:cowboy, "~> 1.0"},
+     {:plug, "~> 1.1.6"},
      {:corsica, "~> 0.5"},
      {:guardian, "~> 0.12.0"},
      {:comeonin, "~> 2.5"},
