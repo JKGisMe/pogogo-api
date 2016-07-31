@@ -4,9 +4,9 @@ defmodule Pogogo.RegistrationControllerTest do
   alias Pogogo.User
 
   @valid_attrs %{
-    email: "stuff@things.com",
-    password: "passw0rd",
-    password_confirmation: "passw0rd"
+    "email": "stuff@things.com",
+    "password": "passw0rd",
+    "password-confirmation": "passw0rd"
   }
 
   @invalid_attrs %{}
@@ -16,10 +16,9 @@ defmodule Pogogo.RegistrationControllerTest do
   end
 
   test "creates and renders rss when data is valid", %{conn: conn} do
-    conn = post conn, registration_path(conn, :create), %{data: %{type: "user",
+    conn = post conn, registration_path(conn, :create), %{data: %{type: "users",
       attributes: @valid_attrs
     }}
-
 
     assert json_response(conn, 201)["data"]["id"]
     assert Repo.get_by(User, %{email: @valid_attrs[:email]})
@@ -27,7 +26,7 @@ defmodule Pogogo.RegistrationControllerTest do
 
   test "does not create rss and renders errors when data is invalid", %{conn: conn} do
     assert_error_sent 400, fn ->
-      conn = post conn, registration_path(conn, :create), %{data: %{type: "user",
+      conn = post conn, registration_path(conn, :create), %{data: %{type: "users",
         attributes: @invalid_attrs
       }}
     end

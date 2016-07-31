@@ -6,16 +6,16 @@ defmodule Pogogo.ErrorViewTest do
 
   test "renders 404.json" do
     assert render(Pogogo.ErrorView, "404.json", []) ==
-           %{errors: %{detail: "Page not found"}}
+           %{errors: [%{code: 404, title: "Page Not Found"}]}
   end
 
   test "render 500.json" do
     assert render(Pogogo.ErrorView, "500.json", []) ==
-           %{errors: %{detail: "Internal server error"}}
+           %{errors: [%{title: "Internal Server Error", code: 500}]}
   end
 
   test "render any other" do
-    assert render(Pogogo.ErrorView, "505.json", []) ==
-           %{errors: %{detail: "Internal server error"}}
+    assert render(Pogogo.ErrorView, "500.json", []) ==
+           %{errors: [%{title: "Internal Server Error", code: 500}]}
   end
 end
