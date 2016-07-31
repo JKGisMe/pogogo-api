@@ -1,12 +1,17 @@
-
 language: elixir
 elixir:
-  - 1.3
+- 1.3
 otp_release:
-  - 19.0
+- 19.0
 sudo: false
 addons:
-  postgresql: '9.5' # Use postgres 9.5
+  postgresql: '9.5'
 before_script:
-# Create the test database
 - psql -c 'create database peepchat_test;' -U postgres
+deploy:
+  provider: heroku
+  api_key:
+    secure: KHkkF90j+af+xz5S25mqFXJUXd6vNP+Cqduj27sCdqLnJJLL+8rs2dj6PvCmftWb1hAS3hASG/gJ0oq4+0zMKl8sOM/AUOzJdDtoqgPK3dXMzs2ItwvRvzQKrxVWi3LHq3uSGXVP7c1ml152HP9fsUoRds55hFGHaUIUtGjvDV2Kj+rd9EvFwyu5AqbgJQGwvTV28SvJUaNyORY4qldsnMMzhFyDIcEF+D1Z9i1PjydfRpDr+wY4H/fVHXicU1kxR/JfLwYvJ4QK99jPSFfBJf4MgC2zTPpW2xm4SAUzwXFLVe48I0zMFYLHgUUdhKXHCPhokuan8I+rxrYYLfq5gIw8Xo3eJWMDCS2StpvqdFuAi0ifyLVB9RKx2Cv3FnqbBf/1DInQMXB4QEQyah3M/uKzOsk2AF4XJyzW8wzadl9i1xXM8r6yrSPtUtpPOAWwvkaR3ykrBOuoUcnN1CgPiBBNj0YAwvXyg4KdiQE8mCKkS4+/Cdhe7UGhQXQCTVTBY4seGWVKTXjHaUqyRA7hV6Q73zNqv1f9zvHJYp1K1kzHFC+yEa84VN8Ieu2pgjyEnEZbDFzyKu1VzxEBq/QosOICrsR2w8OUtQDm2lIzUEpRYpdl8u/MkSnciE/ltgU+sqewa3xEegCHtWt2c62Tw2dmRajKQJJiMwu7L9mDAKM=
+  app: cryptic-beyond-31019
+  on:
+    repo: JKGisMe/pogogo-api
