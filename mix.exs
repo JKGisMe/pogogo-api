@@ -38,7 +38,8 @@ defmodule Pogogo.Mixfile do
      {:cowboy, "~> 1.0"},
      {:corsica, "~> 0.5"},
      {:guardian, "~> 0.12.0"},
-     {:comeonin, "~> 2.5"}]
+     {:comeonin, "~> 2.5"},
+     {:ja_serializer, "~> 0.10.1"}]
   end
 
   # Aliases are shortcuts or tasks specific to the current project.
