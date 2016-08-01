@@ -3,8 +3,6 @@ defmodule Pogogo.Endpoint do
 
   socket "/socket", Pogogo.UserSocket
 
-  plug Logger
-  plug Pogogo.CORS
   plug Corsica, origins: "*", log: [rejected: :warn, invalid: :warn, accepted: :warn]
 
   # Serve at "/" the static files from "priv/static" directory.
