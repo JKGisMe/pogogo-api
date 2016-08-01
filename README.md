@@ -1,4 +1,6 @@
+[![Build Status](https://travis-ci.org/JKGisMe/pogogo-api.svg?branch=master)](https://travis-ci.org/JKGisMe/pogogo-api)
 # Pogogo
+
 
 To start your Phoenix app:
 
