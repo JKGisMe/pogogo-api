@@ -3,7 +3,7 @@ defmodule Pogogo.Endpoint do
 
   socket "/socket", Pogogo.UserSocket
 
-  plug Corsica, origins: "*", log: [rejected: :warn, invalid: :warn, accepted: :warn]
+  plug Corsica, origins: "*", allow_headers: ~w(X-Header), log: [rejected: :warn, invalid: :warn, accepted: :warn]
 
   # Serve at "/" the static files from "priv/static" directory.
   #
